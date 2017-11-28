@@ -55,9 +55,11 @@ let mockGithubObject = [
 class CommandRunner {
   constructor() {}
 
-  responsify(input) {
-    //input is an object from questionparser.parser {username: , subject: }
-    let response = {};
+  responsify(input) { //input is an object from questionparser.parser {username: , subject: }
+  
+  	return new Promise((resolve,reject)=> {
+    
+  		  let response = {};
 
     //adding old keys to response
     response.username = input.username;
@@ -80,7 +82,14 @@ class CommandRunner {
 
     response.results = queries[response.query];
 
-    return response;
+    return resolve(response);
+
+
+
+
+  	})
+
+    
   }
 }
 

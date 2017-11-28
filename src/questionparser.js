@@ -2,7 +2,10 @@ class QuestionParser {
   constructor(){}
 
   parse(question){
-    let object = {}
+
+  return new Promise((resolve,reject) => {
+  if (err) {reject(err)};
+  let object = {}
     //our code
     let arr = question.split(" ") //what repos does griselda have?
     let idx = arr.indexOf("does");
@@ -12,7 +15,10 @@ class QuestionParser {
     object.subject = arr.slice((idx+1), idx2+1).join(" ");
     let query = {"what": "details", "how": "count"};
     object.query = query[arr[0]];
-    return object
+    return resolve(object)
+
+  })
+   
   }
 }
 
