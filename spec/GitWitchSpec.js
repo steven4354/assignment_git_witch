@@ -1,4 +1,4 @@
-const GitWitch = require("../src/GitWitch");
+const GitWitch = require("../GitWitch");
 
 describe("GitWitch", () => {
   beforeEach(() => {
